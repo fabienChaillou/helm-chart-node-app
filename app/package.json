@@ -1,0 +1,16 @@
+{
+  "name": "express-app",
+  "version": "1.0.0",
+  "description": "simple API for the tests",
+  "main": "index.js",
+  "scripts": {
+    "debug": "DEBUG=express:* node server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fchaillou",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
