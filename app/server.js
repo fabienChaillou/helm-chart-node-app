@@ -2,6 +2,18 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+const axios = require("axios");
+const NODE_ELASTIC = process.env.ELASTIC_NODE || "http://localhost:9200/";
+
+app.get('/ping', async (req, res) => {
+  try {
+    const response = await axios.get(`${NODE_ELASTIC}`);
+    res.send(response.data);
+  } catch (e) {
+    res.status(500).json(e);
+  }
+})
+
 app.get('/', (req, res) => {
   res.send('Hello from root route.')
 })
